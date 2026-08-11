@@ -1,0 +1,20 @@
+%{
+int c=0;
+%}
+%%
+[a-zA-z0-9]+ {c++;printf("%s",yytext);}
+%%
+int yywrap(){}
+int main()
+{
+printf("enter the string");
+yylex();
+printf("number of words=%d\n",
+				c);
+
+return 0;
+}
+
+
+
+
